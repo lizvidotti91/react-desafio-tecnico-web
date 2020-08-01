@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --celadon-blue: #457B9D;
+    --light-grey: #e0dbdb;
+    --honeydew: #F1FAEE;
+    --powder-blue: #A8DADC;
+    --prussian-blue: #1D3557;
+    --xiketic: #110B11;
+}

@@ -1,0 +1,41 @@
+.FormBox{
+    padding-top: 40px;
+    text-align: center;
+}
+
+@media (min-width: 800px){
+    .FormBox{
+        padding-top: 80px;
+    }
+}
+
+.SearchButton{
+    border: none;
+    border-radius: 20px;
+    background-color: var(--light-grey);
+    margin-top: 30px;
+    padding: 3% 3% 3% 6%;
+    width: 90%;
+}
+
+@media (min-width: 800px){
+    .SearchButton{
+        margin-top: 60px;
+    }
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--prussian-blue);
+    font-size: 14px;
+    font-weight: 100;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--prussian-blue);
+    font-size: 14px;
+    font-weight: 100;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--prussian-blue);
+    font-size: 14px;
+    font-weight: 100;
+  }

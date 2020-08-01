@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './styles.css';
+import Title from './components/title/index';
+import Search from './components/search/index';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  constructor(){
+    super()
+    this.state = {
+      movies: [],
+      searchTerm: ''
+    }
+    this.apiKey = 'b5d0e5fd9722187c8fd22a8cd3b93de7'
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}&language=pt-BR`)
+    .then(data => data.json())
+    .then(data => {
+      console.log(data);
+      this.setState({movies: [...data.results]})
+    })
+  }
+
+  handleChange = (e) => {
+    this.setState({searchTerm: e.target.value})
+  }
+  render(){
+    return(
+      <div className="App">
+        <Title></Title>
+        <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange}></Search>
+      </div>
+    );
+  }
 }
 
 export default App;
