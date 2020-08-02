@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles.css';
 import Title from './components/title/index';
 import Search from './components/search/index';
+import MovieList from './components/movie-list/index';
 
 class App extends Component{
   constructor(){
@@ -30,8 +31,9 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <Title></Title>
-        <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange}></Search>
+        <Title/>
+        <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+        <MovieList movies={this.state.movies} />
       </div>
     );
   }
