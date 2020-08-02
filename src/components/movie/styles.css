@@ -1,0 +1,134 @@
+.Container{
+    display: flex;
+    height: 150px;
+    margin: 20px auto;
+    width: 90%;
+}
+
+@media (min-width: 800px){
+    .Container{
+        height: 300px;
+    }
+}
+
+.Container .Container-image img{
+    height: 150px;
+}
+
+.Container .Container-content{
+    height: 150px;
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 800px){
+    .Container .Container-image img{
+        height: 300px;
+    }
+
+    .Container .Container-content{
+        height: 300px;
+    }
+}
+
+.Container .Container-content .Container-title{
+    align-items: center;
+    background-color: var(--celadon-blue);
+    display: flex;
+    height: 30px;
+    padding-left: 50px;
+    width: 100%;
+}
+
+.Container .Container-content .Container-title h1{
+    color: var(--powder-blue);
+    font-size: 12px;
+    font-weight: 100;
+}
+
+@media (min-width: 800px){
+    .Container .Container-content .Container-title{
+        height: 60px;
+        padding-left: 100px;
+    }
+
+    .Container .Container-content .Container-title h1{
+        font-size: 24px;
+    }
+}
+
+.Container .Container-content .Container-vote{
+    align-items: center;
+    background-color: var(--celadon-blue);
+    border: 2px solid var(--powder-blue);
+    border-radius: 50%;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    left: 5px;
+    position: absolute;
+    top: 15px;
+    width: 30px;
+}
+
+.Container .Container-content .Container-vote p{
+    color: var(--powder-blue);
+    font-size: 12px;
+}
+
+@media (min-width: 800px){
+    .Container .Container-content .Container-vote{
+        height: 60px;
+        left: 20px;
+        top: 30px;
+        width: 60px;
+    }
+
+    .Container .Container-content .Container-vote p{
+        font-size: 24px;
+    }
+}
+
+.Container .Container-content .Container-date{
+    padding-left: 50px;
+    padding-top: 2px;
+}
+
+.Container .Container-content .Container-date p{
+    color: var(--prussian-blue);
+    font-size: 10px;
+    font-weight: 100;
+}
+
+@media (min-width: 800px){
+    .Container .Container-content .Container-date{
+        padding-left: 100px;
+        padding-top: 4px;
+    }
+
+    .Container .Container-content .Container-date p{
+        font-size: 20px;
+    }
+}
+
+.Container .Container-content .Container-overview p{
+    color: var(--prussian-blue);
+    font-size: 8px;
+    font-weight: 300;
+    padding: 4px 7px;
+    text-align: justify;
+}
+
+@media (min-width: 800px){
+    .Container .Container-content .Container-overview p{
+        font-size: 12px;
+        padding: 14px;
+    }
+}
+
+@media (min-width: 900px){
+    .Container .Container-content .Container-overview p{
+        font-size: 14px;
+        padding: 14px;
+    }
+}

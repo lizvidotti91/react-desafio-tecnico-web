@@ -7,7 +7,7 @@ function MovieList(props){
             {
                 props.movies.map((movie,i) => {
                     return(
-                        <Movie key={movie.id} image={movie.poster_path} title={movie.title} vote={movie.vote_average} date={movie.release_date} overview={movie.overview}/>
+                        <Movie key={movie.id} image={movie.poster_path} title={movie.title} vote={movie.vote_average} date={movie.release_date} overview={movie.overview} genres={movie.genre_ids}/>
                     );
                 })
             }

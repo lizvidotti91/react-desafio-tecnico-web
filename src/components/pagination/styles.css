@@ -1,0 +1,29 @@
+.Pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.Pagination-list{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    width: 100%;
+}
+
+.Pagination .Pagination-list li{
+    padding: 0 8px;
+}
+
+.Pagination .Pagination-list li a{
+    color: var(--prussian-blue);
+    cursor: pointer;
+    font-weight: 300;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.Pagination .Pagination-list li a:hover,
+.Pagination .Pagination-list li a:focus{
+    font-weight: 600;
+    text-decoration: underline;
+}

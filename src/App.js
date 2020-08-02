@@ -3,13 +3,17 @@ import './styles.css';
 import Title from './components/title/index';
 import Search from './components/search/index';
 import MovieList from './components/movie-list/index';
+import Pagination from './components/pagination/index';
 
 class App extends Component{
   constructor(){
     super()
     this.state = {
       movies: [],
-      searchTerm: ''
+      searchTerm: '',
+      totalResults: 0,
+      currentPage: 1,
+      currentMovie: null
     }
     this.apiKey = 'b5d0e5fd9722187c8fd22a8cd3b93de7'
   }
@@ -17,23 +21,35 @@ class App extends Component{
   handleSubmit = (e) => {
     e.preventDefault()
 
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}&language=pt-BR`)
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}&language=pt-BR&`)
     .then(data => data.json())
     .then(data => {
-      console.log(data);
-      this.setState({movies: [...data.results]})
+      this.setState({movies: [...data.results], totalResults: data.total_results})
+      console.log(data.results);
     })
   }
-
   handleChange = (e) => {
     this.setState({searchTerm: e.target.value})
   }
+
+  nextPage = (numberPages) => {
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}&language=pt-BR&page=${numberPages}`)
+    .then(data => data.json())
+    .then(data => {
+      this.setState({
+        movies: [...data.results], currentPage: numberPages})
+    })
+  }
+
   render(){
+    const numberPages = Math.floor(this.state.totalResults / 5);
     return(
       <div className="App">
         <Title/>
         <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
         <MovieList movies={this.state.movies} />
+        {this.state.totalResults > 5 ? <Pagination pages={numberPages} nextPage={this.nextPage} currentPage={this.state.currentPage} /> : ""}
+        {console.log(this.state.currentPage)}
       </div>
     );
   }
