@@ -4,6 +4,7 @@ import Title from './components/title/index';
 import Search from './components/search/index';
 import MovieList from './components/movie-list/index';
 import Pagination from './components/pagination/index';
+import ListMovies from './components/geral/index';
 
 class App extends Component{
   constructor(){
@@ -25,20 +26,11 @@ class App extends Component{
     .then(data => data.json())
     .then(data => {
       this.setState({movies: [...data.results], totalResults: data.total_results})
-      console.log(data.results);
+      //console.log(data);
     })
   }
   handleChange = (e) => {
     this.setState({searchTerm: e.target.value})
-  }
-
-  nextPage = (numberPages) => {
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}&language=pt-BR&page=${numberPages}`)
-    .then(data => data.json())
-    .then(data => {
-      this.setState({
-        movies: [...data.results], currentPage: numberPages})
-    })
   }
 
   render(){
@@ -47,9 +39,8 @@ class App extends Component{
       <div className="App">
         <Title/>
         <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
-        <MovieList movies={this.state.movies} />
-        {this.state.totalResults > 5 ? <Pagination pages={numberPages} nextPage={this.nextPage} currentPage={this.state.currentPage} /> : ""}
-        {console.log(this.state.currentPage)}
+        <ListMovies/> {/* Página Inicial */}
+        <MovieList movies={this.state.movies} />        
       </div>
     );
   }
