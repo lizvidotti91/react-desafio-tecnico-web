@@ -14,17 +14,28 @@ Implementar um web app responsivo que consuma a API do The Movie DB e permita bu
 ## Estrutura de pastas
 1. public
 2. src
+
 2.1. components
+
 2.1.1. geral
-2.1.2. movie
-2.1.3. movie-info
-2.1.4. movie-list
-2.1.5. pagination
-2.1.6. search
-2.1.7. title
+
+2.1.2. img
+
+2.1.3. movie
+
+2.1.4. movie-info
+
+2.1.5. movie-list
+
+2.1.6. pagination
+
+2.1.8. search
+
+2.1.8. title
 
 ## Referências
 React MovieDB API Project (Jason Rivera): https://www.youtube.com/playlist?list=PL_kAgwZgMfWyZ6m8fDwdiwEarr_g6nFxz
+
 Repositório Github (Jason Rivera): https://github.com/rivera1294/dbmovie
 
 **Autora | Author**
