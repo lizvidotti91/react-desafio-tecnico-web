@@ -1,3 +1,37 @@
+# Desafio técnico web - processo seletivo da Cubos
+## Objetivo
+Implementar um web app responsivo que consuma a API do The Movie DB e permita buscar e ver detalhes de filmes de seu catálogo.
+## Especificações
+- Permite buscar filmes por nome
+- Exibe nos resultados da busca: nome, cartaz, data de lançamento, sinopse e pontuação do filme
+- Ao clicar em um resultado da busca, detalhes do filme são mostrados (para os dados que não aparecem na busca, deixei exemplos para compor o layout, conforme passado pela empresa)
+- Responsivo
+## Tecnologias usadas
+- JavaScript
+- React
+- CSS
+- HTML
+## Estrutura de pastas
+1. public
+2. src
+2.1. components
+2.1.1. geral
+2.1.2. movie
+2.1.3. movie-info
+2.1.4. movie-list
+2.1.5. pagination
+2.1.6. search
+2.1.7. title
+
+## Referências
+React MovieDB API Project (Jason Rivera): https://www.youtube.com/playlist?list=PL_kAgwZgMfWyZ6m8fDwdiwEarr_g6nFxz
+Repositório Github (Jason Rivera): https://github.com/rivera1294/dbmovie
+
+**Autora | Author**
+Foto | Nome | GitHub | Likedin | E-mail
+---- | ---- | ------ | ------- | ------
+<img src="./src/components/img/perfil.png" width="100px">  | Liz Vidotti | [Liz Vidotti](https://github.com/lizvidotti91) | [Linkedin](https://www.linkedin.com/in/elisetevidotti/) | liz.vidotti@gmail.com
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
