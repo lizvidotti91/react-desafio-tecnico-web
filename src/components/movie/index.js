@@ -4,7 +4,7 @@ import './styles.css';
 function Movie(props) {
     return (
 
-        <div className="Container">
+        <div className="Container" key={props.id}>
             <div className="Container-image">
                 {
                     props.image == null ? <img src="https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg" alt="Poster do Filme" /> : <img src={`http://image.tmdb.org/t/p/w185${props.image}`} alt="Poster do Filme" />

@@ -2,20 +2,24 @@ import React from 'react';
 import './movie-info.css';
 
 const MovieInfo = (props) => {
+    let idCurrent = props.currentMovie[0].id;
+    console.log(idCurrent);
+    
     return (
         <React.Fragment>
             <div className="Back">
                 <a href="#" onClick={props.closeMovieInfo}>Voltar</a>
             </div>
             <div className="Movie-Info-Container-title">
-                <h1>Lorem Ipsum</h1>
-                <p>DD/MM/YYYY</p>
+                <h1>{props.currentMovie[0].title}</h1>
+                {console.log(props.currentMovie)}
+                <p>{props.currentMovie[0].release_date.split('-').reverse().join('/')}</p>
             </div>
             <div className="MovieInfo-Container">
                 <div className="Movie-Info-Container-content">
                     <div className="Movie-Info-Container-overview">
                         <h1>Sinopse</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et ligula diam. Cras a massa quis sem placerat sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida orci metus, in ullamcorper leo pellentesque ac.</p>
+                        <p>{props.currentMovie[0].overview}</p>
                     </div>
                     <div className="Movie-Info-Container-information">
                         <h1>Informações</h1>
@@ -26,7 +30,7 @@ const MovieInfo = (props) => {
                             </div>
                             <div className="Movie-Info-Status">
                                 <h2>Idioma</h2>
-                                <p>Lorem</p>
+                                <p>{props.currentMovie[0].original_language}</p>
                             </div>
                             <div className="Movie-Info-Status">
                                 <h2>Duração</h2>
@@ -52,17 +56,19 @@ const MovieInfo = (props) => {
                                 <a href="#">Gender</a>
                             </div>
                             <div className="Vote">
-                                100%
+                                {props.currentMovie[0].vote_average}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="Movie-Info-Container-image">
-                    <img src="https://images.pexels.com/photos/1121967/pexels-photo-1121967.jpeg" />
+                    {
+                        props.currentMovie[0].poster_path == null ? <img src="https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg" alt="Poster do Filme" /> : <img src={`http://image.tmdb.org/t/p/w185${props.currentMovie[0].poster_path}`} alt="Poster do Filme" />
+                    }
                 </div>
             </div>
             <div className="Video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/4OmEi_AIjZc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/4OmEi_AIjZc" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
         </React.Fragment>
     );

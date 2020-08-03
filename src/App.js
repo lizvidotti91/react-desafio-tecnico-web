@@ -53,8 +53,6 @@ class App extends Component {
         {this.state.currentMovie == null ?
           <div>
             <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
-            {/* Página Inicial */}
-            {/* <ListMovies/> */}
             <MovieList viewMovieInfo={this.viewMovieInfo} movies={this.state.movies} />
           </div>
           :
